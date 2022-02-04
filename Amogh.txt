@@ -1,0 +1,217 @@
+Q.1
+
+import java.util.Scanner;
+
+public class Q1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Input first number");
+        int a = input.nextInt();
+
+        System.out.println("Input Second number");
+        int b = input.nextInt();
+
+        System.out.println("Input third number");
+        int c = input.nextInt();
+
+        System.out.println("Input fourth number");
+        int d = input.nextInt();
+
+        if(a == b && b == c && c == d && d == a){
+            System.out.println("Numbers are equal");
+        }
+        else{
+            System.out.println("Numbers are not equal");
+        }
+
+    }
+    
+}
+
+
+
+Q.2
+
+import java.text.NumberFormat.Style;
+import java.util.Scanner;
+
+public class Q2 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+
+        System.out.println("Input first number");
+        double  a = input.nextDouble();
+
+        System.out.println("Input second number");
+        double  b = input.nextDouble();
+
+        if((a>0 && a<1) && (b>0 && b<1)){
+            System.out.println("True");
+        }
+        else{
+            System.out.println("False");
+        }
+
+
+    }
+    
+}
+
+
+Q.3
+
+public class Q3 {
+    public static void main(String[] args) {
+        String[][]   a = {{"TRUE","FALSE","TRUE"},{"FALSE","TRUE","FALSE"}};
+
+        for(int i = 0;i < 2;i++)
+        {
+            for(int j = 0;j < 3;j++)
+            {
+                if(a[i][j] == "TRUE")
+                {
+                    System.out.println("t");
+                }
+                else{
+                    System.out.println("f");
+                }
+            }
+            System.out.println(" ");
+        }
+    }
+    
+}
+
+
+Q.4
+
+import java.util.Scanner;
+
+import javax.sound.sampled.SourceDataLine;
+
+public class Q4 {
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Enter number of rows: ");
+    int r = input.nextInt();
+
+    System.out.println("Enter number of columns: ");
+    int c = input.nextInt();
+
+    int[][] A = new int[r][c];
+
+    for(int i = 0;i<r;i++)
+    {
+        for(int j =0;j<c;j++)
+        {
+            A[i][j] = input.nextInt();
+        }
+    }
+
+    System.out.println(" Original matrix: ");
+    for(int i=0;i<r;i++)
+    {
+        for(int j =0;j<c;j++)
+        {
+            System.out.print(A[i][j]+"\t");
+        }
+        System.out.println();
+    }
+
+    System.out.println(" Transpose  matrix: ");
+    for(int i=0;i<c;i++)
+    {
+        for(int j =0;j<r;j++)
+        {
+            System.out.print(A[j][i]+"\t");
+        }
+        System.out.println();
+    }
+    }
+    
+}
+
+
+Q.6
+
+import java.util.Scanner;
+
+public class Q6 {
+    public static void main(String[] args) {
+        int binary[] = new int[100];
+
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter decimal Number: ");
+        int n = input.nextInt();
+
+        int i = 0;
+        while(n != 0)
+        {
+            binary[i] = n%2;
+            n = n/2;
+            i++;
+        }
+
+        int c = 0;
+        for(int j =i-1;j>=0;j--)
+        {
+           if(binary[j] == 0)
+                c++;
+        }
+        System.out.println(c);
+    }
+}
+
+
+Q.5
+
+import java.util.Scanner;
+
+public class Q5 {
+    private static int j;
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the size of the array: ");
+        int n = input.nextInt();
+        System.out.println(n);
+
+        int[] a = new int[n];
+
+        for(int i=0;i<n;i++)
+        {
+            a[i] = input.nextInt();
+        }
+
+        System.out.println("Enter the k value: ");
+        int k = input.nextInt();
+
+        int temp = 0;
+        for(int i =0;i<=n-1;i++)
+        {
+            for(int j=0;j<=n-1;j++)
+            {
+                if(a[j]>a[j+1])
+                    temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+            }
+        }
+
+        int i = n-1;
+        
+        while(k--)
+        {
+            System.out.println(a[i]);
+            i--;
+        }
+    }
+    
+}
